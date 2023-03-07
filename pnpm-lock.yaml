@@ -7,7 +7,6 @@ specifiers:
   '@volar/vue-language-core': 1.2.1
   '@volar/vue-typescript': 1.2.1
   '@vue/compiler-sfc': ^3.2.47
-  cac: ^6.7.14
   esbuild: ^0.17.10
   esbuild-register: ^3.4.2
   fs-extra: ^11.1.0
@@ -19,7 +18,6 @@ dependencies:
   '@volar/vue-language-core': 1.2.1
   '@volar/vue-typescript': 1.2.1
   '@vue/compiler-sfc': 3.2.47
-  cac: 6.7.14
   fs-extra: 11.1.0
   typescript: 4.9.5
 
@@ -500,11 +498,6 @@ packages:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
     dependencies:
       balanced-match: 1.0.2
-    dev: false
-
-  /cac/6.7.14:
-    resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
-    engines: {node: '>=8'}
     dev: false
 
   /csstype/2.6.21:

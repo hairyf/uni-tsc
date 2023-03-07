@@ -18,7 +18,6 @@
     "@volar/vue-language-core": "1.2.1",
     "@volar/vue-typescript": "1.2.1",
     "@vue/compiler-sfc": "^3.2.47",
-    "cac": "^6.7.14",
     "fs-extra": "^11.1.0",
     "typescript": "^4.9.5"
   },
