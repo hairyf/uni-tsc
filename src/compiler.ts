@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import path from 'node:path'
 import ts from 'typescript'
-import swc from '@swc/core'
-import compilerSFC from '@vue/compiler-sfc'
+import type swc from '@swc/core'
 import fs from 'fs-extra'
 
 const SCRIPT_TARGETS = {
@@ -20,29 +20,30 @@ const SCRIPT_TARGETS = {
 } as unknown as Record<ts.ScriptTarget, swc.JscTarget>
 
 function transformSync(target = ts.ScriptTarget.ES2018, content: string) {
-  const { code } = swc.transformSync(content, {
+  const { code } = require('@swc/core').transformSync(content, {
     jsc: {
       parser: { syntax: 'typescript' },
       target: SCRIPT_TARGETS[target],
     },
   })
-  return code
+  return code as string
 }
 
 export function vueCompiler(rootNames: string[], options: ts.CompilerOptions) {
   for (const name of rootNames.filter(v => v.endsWith('.vue'))) {
     const vueFile = fs.readFileSync(name, 'utf-8')
-    const { descriptor } = compilerSFC.parse(vueFile)
-
+    const { descriptor } = require('@vue/compiler-sfc').parse(vueFile)
     let source = vueFile
       .replace(/<script.*?<\/script>/gs, '')
 
     if (descriptor.scriptSetup?.content)
-      source = `<script setup>\n${transformSync(options.target, descriptor.scriptSetup.content)} </script>\n\n${source}`
+      source = `<script setup>\n${transformSync(options.target, descriptor.scriptSetup.content)}</script>\n\n${source}`
 
     if (descriptor.script?.content)
-      source = `<script>\n${transformSync(options.target, descriptor.script.content)} </script>\n\n${source}`
+      source = `<script>\n${transformSync(options.target, descriptor.script.content)}</script>\n\n${source}`
 
+    source = source.replace(' // #endif', '\n// #endif')
+    source = source.replace(/[\n]{2,}/g, '')
     const filePath = path.join(options.outDir!, path.relative(process.cwd(), name))
     fs.ensureDirSync(path.dirname(filePath))
     fs.writeFileSync(filePath, source)
