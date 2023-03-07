@@ -28,4 +28,4 @@ yarn add uni-tsc --dev
 `uni-tsc [...files] --declaration`
 
 
-> 所有选项与 tsc 保持一直，所以输入 uni-tsc --help 获得更多配置说明。
+> 所有选项与 tsc 保持一致，所以输入 uni-tsc --help 获得更多配置说明。
