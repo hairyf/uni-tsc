@@ -15,7 +15,7 @@ yarn add uni-tsc --dev
 
 ## Usage
 
-它与 [vue-tsc](https://www.npmjs.com/package/vue-tsc) 类似，但与 `vue-tsc` 不同与可以输出已编译的 `.vue` 文件，它适用于编译 [uniapp](https://uniapp.dcloud.net.cn/) 的组件！
+它与 [vue-tsc](https://www.npmjs.com/package/vue-tsc) 类似，但与 `vue-tsc` 不同于可以输出已编译的 `.vue` 文件，它适用于编译 [uniapp](https://uniapp.dcloud.net.cn/) 的组件！
 
 > vue-tsc 在 [#2220](https://github.com/vuejs/language-tools/pull/2220) 已不支持 emit 任何文件。
 
@@ -28,4 +28,4 @@ yarn add uni-tsc --dev
 `uni-tsc [...files] --declaration`
 
 
-> 所有选项与 tsc 保持一直，输入 uni-tsc --help 获得更多配置说明。
+> 所有选项与 tsc 保持一直，所以输入 uni-tsc --help 获得更多配置说明。
