@@ -19,6 +19,38 @@ yarn add uni-tsc --dev
 
 > vue-tsc 在 [#2220](https://github.com/vuejs/language-tools/pull/2220) 已不支持 emit 任何文件。
 
+uni-tsc 与 tsc 一样，需要 `tsconfig.json`，建议您使用以下配置：
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "declaration": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true
+  },
+  "exclude": [
+    "**/dist/*.ts",
+    "**/dist/*.d.ts"
+  ],
+  "include": [
+    "./**/*.ts",
+    "./**/*.d.ts",
+    "./**/*.tsx",
+    "./**/*.vue",
+    "types/**.d.ts",
+    "types/**/**.d.ts"
+  ]
+}
+
+```
+
 基本使用:
 
 `uni-tsc [...files]`
