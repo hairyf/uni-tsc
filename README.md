@@ -36,8 +36,9 @@ uni-tsc 与 tsc 一样，需要 `tsconfig.json`，建议您使用以下配置：
     "downlevelIteration": true
   },
   "exclude": [
-    "**/dist/*.ts",
-    "**/dist/*.d.ts"
+    "**/dist/**/*.js",
+    "**/dist/**/*.ts",
+    "**/dist/**/*.vue"
   ],
   "include": [
     "./**/*.ts",
