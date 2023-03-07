@@ -29,7 +29,7 @@ uni-tsc 与 tsc 一样，需要 `tsconfig.json`，建议您使用以下配置：
     "moduleResolution": "node",
     "strict": true,
     "declaration": true,
-    "outFile": "dist",
+    "outDir": "dist",
     "jsx": "preserve",
     "resolveJsonModule": true,
     "esModuleInterop": true,
