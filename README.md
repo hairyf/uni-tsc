@@ -58,5 +58,6 @@ uni-tsc 与 tsc 一样，需要 `tsconfig.json`，建议您使用以下配置：
 
 `uni-tsc [...files] --declaration`
 
+> 如未使用 `noEmit` 选项，在编译 .vue 后，由于不能覆盖源文件，所以 `outDir` 是必须的！
 
 > 所有选项与 tsc 保持一致，所以输入 uni-tsc --help 获得更多配置说明。
