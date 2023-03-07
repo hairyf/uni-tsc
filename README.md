@@ -13,7 +13,7 @@ pnpm add uni-tsc --dev
 yarn add uni-tsc --dev
 ```
 
-## Usage
+## 📖 Usage
 
 与 [vue-tsc](https://www.npmjs.com/package/vue-tsc) 类似，但与 `vue-tsc` 不同于可以输出已编译的 `.vue` 文件，它适用于编译 [uniapp](https://uniapp.dcloud.net.cn/) 的组件！
 
