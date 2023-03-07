@@ -44,9 +44,7 @@ uni-tsc 与 tsc 一样，需要 `tsconfig.json`，建议您使用以下配置：
     "./**/*.ts",
     "./**/*.d.ts",
     "./**/*.tsx",
-    "./**/*.vue",
-    "types/**.d.ts",
-    "types/**/**.d.ts"
+    "./**/*.vue"
   ]
 }
 
