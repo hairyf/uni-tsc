@@ -9,6 +9,8 @@ specifiers:
   '@volar/vue-typescript': 1.2.1
   '@vue/compiler-sfc': ^3.2.47
   bumpp: ^9.0.0
+  esbuild: ^0.17.11
+  esbuild-register: ^3.4.2
   eslint: ^8.35.0
   fs-extra: ^11.1.0
   ptsup: ^0.3.1
@@ -27,6 +29,8 @@ devDependencies:
   '@types/fs-extra': 11.0.1
   '@types/node': 18.14.6
   bumpp: 9.0.0
+  esbuild: 0.17.11
+  esbuild-register: 3.4.2_esbuild@0.17.11
   eslint: 8.35.0
   ptsup: 0.3.1
 
@@ -3262,3 +3266,5 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+publishDirectory: dist

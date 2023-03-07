@@ -66,7 +66,7 @@ export function createVueCoreProgram(options: ts.CreateProgramOptions) {
     getCompilationSettings: () => ctx.options.options,
     getVueCompilationSettings: () => vueCompilerOptions,
     getScriptFileNames: () => {
-      if (!options.options?.emitDeclarationOnly || !options.options?.noEmit)
+      if (!options.options?.declaration)
         return ctx.options.rootNames.filter(v => !v.endsWith('.vue'))
       return ctx.options.rootNames as string[]
     },
