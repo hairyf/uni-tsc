@@ -1,15 +1,28 @@
 {
   "name": "uni-tsc",
-  "version": "1.0.0",
-  "description": "",
-  "author": "",
+  "version": "0.0.1",
+  "description": "在 uniapp 中使用 uni-tsc 编译兼容 JavaScript 的组件与 `d.ts` 文件",
+  "author": "Hairy",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/TuiMao233/uni-tsc.git"
   },
-  "keywords": [],
-  "main": "index.js",
+  "keywords": [
+    "uniapp",
+    "typescript",
+    "uni-tsc"
+  ],
+  "main": "src/index.ts",
+  "publishConfig": {
+    "directory": "dist",
+    "main": "index.js"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "ptsup --meta --clean",
+    "release": "bumpp"   
+  },
   "bin": {
     "uni-tsc": "./bin/index.js"
   },
@@ -25,9 +38,11 @@
     "@antfu/eslint-config": "^0.36.0",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.14.6",
-    "esbuild": "^0.17.10",
-    "esbuild-register": "^3.4.2",
+    "bumpp": "^9.0.0",
     "eslint": "^8.35.0",
-    "vue": "^3.2.47"
+    "ptsup": "^0.3.1"
+  },
+  "peerDependencies": {
+    "typescript": "*"
   }
 }
