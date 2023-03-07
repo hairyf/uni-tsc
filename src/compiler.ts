@@ -1,8 +1,8 @@
-import ts from 'typescript';
-import swc from "@swc/core";
-import compilerSFC from '@vue/compiler-sfc';
-import fs from 'fs-extra';
-import path from 'path'
+import path from 'node:path'
+import ts from 'typescript'
+import swc from '@swc/core'
+import compilerSFC from '@vue/compiler-sfc'
+import fs from 'fs-extra'
 
 const SCRIPT_TARGETS = {
   [ts.ScriptTarget.ES3]: 'es3',
@@ -23,8 +23,8 @@ function transformSync(target = ts.ScriptTarget.ES2018, content: string) {
   const { code } = swc.transformSync(content, {
     jsc: {
       parser: { syntax: 'typescript' },
-      target: SCRIPT_TARGETS[target]
-    }
+      target: SCRIPT_TARGETS[target],
+    },
   })
   return code
 }
@@ -37,12 +37,11 @@ export function vueCompiler(rootNames: string[], options: ts.CompilerOptions) {
     let source = vueFile
       .replace(/<script.*?<\/script>/gs, '')
 
-    if (descriptor.scriptSetup?.content) {
-      source = `<script setup>\n${transformSync(options.target, descriptor.scriptSetup.content)} </script>\n\n` + source
-    }
-    if (descriptor.script?.content) {
-      source = `<script>\n${transformSync(options.target, descriptor.script.content)} </script>\n\n` + source
-    }
+    if (descriptor.scriptSetup?.content)
+      source = `<script setup>\n${transformSync(options.target, descriptor.scriptSetup.content)} </script>\n\n${source}`
+
+    if (descriptor.script?.content)
+      source = `<script>\n${transformSync(options.target, descriptor.script.content)} </script>\n\n${source}`
 
     const filePath = path.join(options.outDir!, path.relative(process.cwd(), name))
     fs.ensureDirSync(path.dirname(filePath))
