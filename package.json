@@ -1,0 +1,32 @@
+{
+  "name": "uni-tsc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "uni-tsc": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TuiMao233/uni-tsc.git"
+  },
+  "dependencies": {
+    "@swc/core": "^1.3.38",
+    "@volar/vue-language-core": "1.2.1",
+    "@volar/vue-typescript": "1.2.1",
+    "@vue/compiler-sfc": "^3.2.47",
+    "cac": "^6.7.14",
+    "fs-extra": "^11.1.0",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^18.14.6",
+    "esbuild": "^0.17.10",
+    "esbuild-register": "^3.4.2",
+    "vue": "^3.2.47"
+  }
+}
