@@ -1,6 +1,6 @@
 {
   "name": "uni-tsc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "在 uniapp 中使用 uni-tsc 编译兼容 JavaScript 的组件与 `d.ts` 文件",
   "author": "Hairy",
   "license": "ISC",
@@ -21,7 +21,7 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "ptsup --meta --clean",
-    "release": "bumpp"   
+    "release": "bumpp"
   },
   "bin": {
     "uni-tsc": "./bin/index.js"
